@@ -1,0 +1,36 @@
+﻿@page
+@model TopsyTurvyCakes.Pages.ContactModel
+@{
+
+    var email = "info@topsy.org";
+    var phone = "999-222-3333";
+    var address = "123 Copernicus Center, Geoville, Utah";
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container text-center">
+    <div class="row label-info">
+        <h4>Available 24/7 except for Sunday through Saturday</h4>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            Email: @email
+        </div>
+        <div class="col-md-4">
+            Address: @address
+        </div>
+        <div class="col-md-4">
+            Phone: @phone
+        </div>
+    </div>
+    <div class="row lead">
+        <h4>Here's our humble abode</h4>
+    </div>
+    <div class="row">
+        <div class="col-mid-6 center-block">
+            <img src="https://vignette.wikia.nocookie.net/justcause/images/d/df/Shack.jpg/revision/latest?cb=20160424144723" />
+        </div>
+    </div>
+</div>
+
