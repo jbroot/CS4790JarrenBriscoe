@@ -1,0 +1,55 @@
+﻿@page "{id}"
+@{
+    var id = long.Parse((string)RouteData.Values["id"]);
+    var recipesService = new RecipesService();
+    var recipes = await recipesService.FindAsync(id);
+    ViewData["Title"] = recipes.Name;
+}
+@section Title{
+    <h2 class="title">My Favorite Recipies</h2>
+    <a asp-page="Admin/AddEditRecipe" asp-route-id="@id" class="add-recipe btn btn-primary">Edit Recipe</a>
+}
+<div class="container">
+
+    <div class="row recipe">
+
+        <div class="col-md-8">
+
+            <div class="col-md-12">
+
+                <span class="description">
+                    @recipes.Description
+                </span>
+
+                <hr />
+            </div>
+
+            <div class="ingredients col-md-4">
+                <h4>Ingredients</h4>
+                <ul>
+                    @foreach (var ingredient in recipes.IngredientsList)
+                    {
+                        <li>@ingredient</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="directions col-md-8">
+                <h4>Directions</h4>
+                <ol>
+                    @foreach (var step in recipes.DirectionsList)
+                    {
+                        <li>@step</li>
+                    }
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 text-right">
+            <img class="img img-thumbnail" src="@recipes.GetInlineImageSrc()" />
+        </div>
+
+    </div>
+
+</div>
