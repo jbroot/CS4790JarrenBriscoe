@@ -4,7 +4,7 @@
     ViewData["Title"] = Model.IsNewRecipe ? "New Recipe" : "Edit Recipe";
 }
 <div asp-validation-summary="All"></div>
-<form method="post" class="form-horizontal">
+<form method="post" enctype="multipart/form-data" class="form-horizontal">
     <div class="form-group">
         <label asp-for="Recipe.Name" class="col-md-2 control-label"></label>
         <span asp-validation-for="Recipe.Name"></span>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="Ingredients" class="col-md-2 control-label"></label>
+        <label asp-for="Recipe.Ingredients" class="col-md-2 control-label"></label>
         <div class="col-md-10">
             <textarea rows="5" asp-for="Recipe.Ingredients" class="form-control"></textarea>
         </div>
@@ -33,7 +33,7 @@
     <div class="form-group">
         <label asp-for="image" class="col-md-2 control-label"></label>
         <div class="col-md-10">
-            <input type="file" formenctype="multipart/form-data" asp-for="image"/>
+            <input type="file" asp-for="image"/>
         </div>
     </div>
     <div class="form-group">

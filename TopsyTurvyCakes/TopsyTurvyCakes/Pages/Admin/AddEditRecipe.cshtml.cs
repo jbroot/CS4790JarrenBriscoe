@@ -27,6 +27,7 @@ namespace TopsyTurvyCakes.Pages.Admin
 
         [BindProperty]
         public Recipe Recipe { get; set; }
+        //public Recipe postRecipe { get; set; }
         public IRecipesService recipesService { get; set; }
         public AddEditRecipeModel(IRecipesService recipesService)
         {
@@ -50,11 +51,13 @@ namespace TopsyTurvyCakes.Pages.Admin
             //update save and redirect methods to point to this local instance instead of recipe property
             //copy posted data and update this instance you just retrieved from the database. 
             //1st copy name property, description, ingredients, and directions properties. image data is still here
-            Recipe postRecipe = await recipesService.FindAsync(Recipe.Id) ?? new Recipe();
-            postRecipe.Name = Recipe.Name;
-            postRecipe.Description = Recipe.Description;
-            postRecipe.Ingredients = Recipe.Ingredients;
-            postRecipe.Directions = Recipe.Directions;
+            //Recipe postRecipe = await recipesService.FindAsync(Recipe.Id) ?? new Recipe();
+            ////Recipe postRecipe = Recipe;
+            //postRecipe.Name = Recipe.Name;
+            //postRecipe.Description = Recipe.Description;
+            //postRecipe.Ingredients = Recipe.Ingredients;
+            //postRecipe.Directions = Recipe.Directions;
+
             //TODO:
             //retrieve the uploaded data from image property
             //copy to temporary stream then read image's bytes
@@ -62,24 +65,26 @@ namespace TopsyTurvyCakes.Pages.Admin
             //copy uploaded image bytes from property to stream with CopyToAsync
             //convert to bytes and assign to the recipe object with memory streams ToArray()
             //get image's content type from metadata
-
             if (image != null)
             {
                 Recipe.SetImage(image);
-                using (var targetStream = new MemoryStream())
-                {
-                    await image.CopyToAsync(targetStream);
-                    postRecipe.Image = targetStream.ToArray();
-                }
-                postRecipe.ImageContentType = image.ContentType;
+            }
+            //else
+            //{
+            //    Recipe.Image = Recipe.Image;
+            //    postRecipe.ImageContentType = Recipe.ImageContentType;
+            //}
+            await recipesService.SaveAsync(Recipe);
+            if (IsNewRecipe)
+            {
+                return RedirectToPage("/Recipe", new { id = Recipe.Id });
             }
             else
             {
-                postRecipe.Image = Recipe.Image;
+                //await recipesService.DeleteAsync((long)Id);
+                //postRecipe.Id = (long)Id;
+                return RedirectToPage("/Recipe", new { id = Recipe.Id });
             }
-            
-            await recipesService.SaveAsync(postRecipe);
-            return RedirectToPage("/Recipe", new { id = postRecipe.Id });
         }
 
         public async Task<IActionResult> OnPostDelete()

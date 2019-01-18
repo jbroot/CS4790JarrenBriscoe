@@ -12536,11 +12536,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ccp\\source\\repos\\TopsyTurvyCakes\\TopsyTurvyCakes\\TopsyTurvyCakes.csproj",
+      "projectUniqueName": "C:\\Users\\ccp\\source\\repos\\CS4790JarrenBriscoe\\TopsyTurvyCakes\\TopsyTurvyCakes\\TopsyTurvyCakes.csproj",
       "projectName": "TopsyTurvyCakes",
-      "projectPath": "C:\\Users\\ccp\\source\\repos\\TopsyTurvyCakes\\TopsyTurvyCakes\\TopsyTurvyCakes.csproj",
+      "projectPath": "C:\\Users\\ccp\\source\\repos\\CS4790JarrenBriscoe\\TopsyTurvyCakes\\TopsyTurvyCakes\\TopsyTurvyCakes.csproj",
       "packagesPath": "C:\\Users\\ccp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ccp\\source\\repos\\TopsyTurvyCakes\\TopsyTurvyCakes\\obj\\",
+      "outputPath": "C:\\Users\\ccp\\source\\repos\\CS4790JarrenBriscoe\\TopsyTurvyCakes\\TopsyTurvyCakes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
