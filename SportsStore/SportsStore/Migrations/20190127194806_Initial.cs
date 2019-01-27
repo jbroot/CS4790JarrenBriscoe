@@ -9,6 +9,8 @@ namespace SportsStore.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            //migrationBuilder.EnsureSchema("Products")
+            //migrationBuilder.DropTable("Products");
             migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
