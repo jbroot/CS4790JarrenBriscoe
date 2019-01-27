@@ -3,6 +3,7 @@ using System.Linq;
 using Moq;
 using SportsStore.Controllers;
 using SportsStore.Models;
+using SportsStore.Models.ViewModels;
 using Xunit;
 namespace SportsStore.Tests
 {
@@ -24,7 +25,7 @@ namespace SportsStore.Tests
             controller.PageSize = 3;
             // Act
             ProductsListViewModel result =
-            controller.List(2).ViewData.Model as ProductsListViewModel;
+            controller.List(null, 2).ViewData.Model as ProductsListViewModel;
             // Assert
             Product[] prodArray = result.Products.ToArray();
             Assert.True(prodArray.Length == 2);
