@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GraniteWarehouse.Data.Migrations
 {
-    public partial class addSpecialTags : Migration
+    public partial class SpecialTags : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

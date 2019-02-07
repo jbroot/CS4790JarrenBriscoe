@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GraniteWarehouse.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using GraniteWarehouse.Models;
 
 namespace GraniteWarehouse.Data
 {
@@ -13,7 +13,8 @@ namespace GraniteWarehouse.Data
             : base(options)
         {
         }
-        public DbSet<ProductTypes> ProductTypes { get; set; }  
+
+        public DbSet<ProductTypes> ProductTypes { get; set; }
         public DbSet<SpecialTags> SpecialTags { get; set; }
         public DbSet<Products> Products { get; set; }
 

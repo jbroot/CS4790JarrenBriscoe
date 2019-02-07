@@ -18,15 +18,12 @@ namespace GraniteWarehouse.Models
 
         [Display(Name="Product Type")]
         public int ProductTypeId { get; set; }
-
-        [Display(Name="Special Tag")]
+        [Display(Name = "Special Tag")]
         public int SpecialTagsId { get; set; }
 
         [ForeignKey("SpecialTagsId")]
         public virtual SpecialTags SpecialTags { get; set; }
-
         [ForeignKey("ProductTypeId")]
         public virtual ProductTypes ProductTypes { get; set; }
-
     }
 }

@@ -17,11 +17,12 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
         {
             _db = db;
         }
-
         public IActionResult Index()
         {
             return View(_db.ProductTypes.ToList());
         }
+
+
 
         //GET Create Action Method
         public IActionResult Create()
@@ -78,8 +79,6 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
             }
             return View(productTypes);
         }
-
-
         //GET Details Action Method
         public async Task<IActionResult> Details(int? id)
         {
@@ -96,7 +95,6 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
 
             return View(productType);
         }
-
         //GET Delete Action Method
         public async Task<IActionResult> Delete(int? id)
         {
@@ -127,3 +125,4 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
 
     }
 }
+

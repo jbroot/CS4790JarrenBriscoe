@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>aspnet-GraniteWarehouse-43B683C1-FD8F-4EE1-BFD3-D0E75038EB5C</UserSecretsId>
+    <UserSecretsId>aspnet-GraniteWarehouse-A45362E9-99A6-45B3-B5BF-E46B359F8DFE</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,27 +14,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\images\ProductImage\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Areas\Admin\Views\SpecialTags\Delete.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Areas\Admin\Views\SpecialTags\Details.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Areas\Admin\Views\_ViewImports.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Areas\Admin\Views\_ViewStart.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Areas\Customer\Views\_ViewImports.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Areas\Customer\Views\_ViewStart.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
   </ItemGroup>
 
 </Project>

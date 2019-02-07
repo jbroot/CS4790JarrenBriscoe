@@ -29,6 +29,7 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
                 Products = new Models.Products()
             };
         }
+
         public async Task<IActionResult> Index()
         {
             var products = _db.Products.Include(m => m.ProductTypes).Include(m => m.SpecialTags);
@@ -36,15 +37,16 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
         }
 
         //Get: Product Create
+
         public IActionResult Create()
         {
             return View(ProductsVM); //because I want dropdowns
         }
 
-        //POst: product create
+        //Post:  Product Create
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreatePOST() //we have Bindproperty so parameters not necessary
+        public async Task<IActionResult> CreatePOST()  //we have BindProperty so no parameters are necessary
         {
             if (!ModelState.IsValid)
             {
@@ -54,7 +56,7 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
             _db.Products.Add(ProductsVM.Products);
             await _db.SaveChangesAsync();
 
-            //Product was saved. Now for the physical image
+            //Product was saved, but the physical image...
 
             //Save Physical Image
 
@@ -63,22 +65,28 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
 
             var productsFromDb = _db.Products.Find(ProductsVM.Products.Id);
 
-            if(files.Count != 0)
+            if (files.Count != 0)
             {
-                //Image(s) are uploaded with the form
+                //Image(s) has been uploaded with form
+
                 var uploads = Path.Combine(webRootPath, SD.ImageFolder);
                 var extension = Path.GetExtension(files[0].FileName);
 
                 using (var filestream = new FileStream(Path.Combine(uploads, ProductsVM.Products.Id + extension), FileMode.Create))
                 {
-                    files[0].CopyTo(filestream); //moves to server and renames
+                    files[0].CopyTo(filestream);  //moves to server and renames
                 }
 
-                //now I know the new image name, I can save the image to the database
+                //now I know the new image name, so I can save the STRING image to the database
 
-                productsFromDb.Image = @"\" + SD.ImageFolder + "\\" + ProductsVM.Products.Id + extension;
+                productsFromDb.Image = @"\" + SD.ImageFolder + @"\" + ProductsVM.Products.Id + extension;
 
             }
+            else
+            { }
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            
         }
     }
 }

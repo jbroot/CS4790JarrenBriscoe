@@ -17,7 +17,6 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
         {
             _db = db;
         }
-
         public IActionResult Index()
         {
             return View(_db.SpecialTags.ToList());
@@ -51,13 +50,13 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var specialTag = await _db.SpecialTags.FindAsync(id);
-            if (specialTag == null)
+            var specialTags = await _db.SpecialTags.FindAsync(id);
+            if (specialTags == null)
             {
                 return NotFound();
             }
 
-            return View(specialTag);
+            return View(specialTags);
         }
 
         //POST Edit action Method
@@ -78,8 +77,6 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
             }
             return View(specialTags);
         }
-
-
         //GET Details Action Method
         public async Task<IActionResult> Details(int? id)
         {
@@ -88,15 +85,14 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var specialTag = await _db.SpecialTags.FindAsync(id);
-            if (specialTag == null)
+            var specialTags = await _db.SpecialTags.FindAsync(id);
+            if (specialTags == null)
             {
                 return NotFound();
             }
 
-            return View(specialTag);
+            return View(specialTags);
         }
-
         //GET Delete Action Method
         public async Task<IActionResult> Delete(int? id)
         {
@@ -105,13 +101,13 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var specialTag = await _db.SpecialTags.FindAsync(id);
-            if (specialTag == null)
+            var specialTags = await _db.SpecialTags.FindAsync(id);
+            if (specialTags == null)
             {
                 return NotFound();
             }
 
-            return View(specialTag);
+            return View(specialTags);
         }
 
         //POST Delete action Method
@@ -124,6 +120,8 @@ namespace GraniteWarehouse.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
 
     }
 }
