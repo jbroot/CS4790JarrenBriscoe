@@ -4,11 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using GraniteWarehouse.Data;
 using GraniteWarehouse.Models;
+using GraniteWarehouse.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GraniteWarehouse.Areas.Admin.Controllers
 {
+
     [Area("Admin")]
+    //[Authorize(Roles = SD.SuperAdminEndUser)]
+
     public class SpecialTagsController : Controller
     {
         public readonly ApplicationDbContext _db;

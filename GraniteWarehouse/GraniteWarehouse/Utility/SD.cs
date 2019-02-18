@@ -9,5 +9,7 @@ namespace GraniteWarehouse.Utility
     {
         public const string DefaultProductImage = "default_image.jpg";
         public const string ImageFolder = @"images\ProductImage";
+        //public var IsSuperAdmin = services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>();
+        public bool IsAdmin = false;
     }
 }
