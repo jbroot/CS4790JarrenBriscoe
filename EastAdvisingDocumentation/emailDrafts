@@ -1,0 +1,23 @@
+Variables: student name, baseUrl, confirmation number (appointment id), advisor, location
+
+Confirmation/Reminder:
+
+$firstName,
+
+You have an appointment on $date at $time with $advisor in $location.
+
+Click <a href=”$baseUrl/delete.html?confirmation=$confirmationNumber”>here</a> to cancel your appointment.
+
+
+Student canceled:
+
+$advisor,
+
+Unfortunately, $studentName is unable to make it to the appointment scheduled on $date at $time.
+
+
+Advisor canceled:
+
+$firstName,
+
+Unfortunately, $advisor is unable to attend your appointment on $date at $time. Please reschedule at $baseUrl.
