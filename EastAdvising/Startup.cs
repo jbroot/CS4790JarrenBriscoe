@@ -13,6 +13,11 @@ using EastAdvising.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Microsoft.AspNetCore.Owin;
+using Microsoft.AspNetCore.Owin.Security.Google;
+using Microsoft.Owin.Security.Cookies;
+using Microsoft.AspNet.Identity;
+
 namespace EastAdvising
 {
     public class Startup
@@ -32,6 +37,11 @@ namespace EastAdvising
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddAuthentication().AddGoogle(opts => {
+                opts.ClientId = "228103239088-jh9iddrro090egk64j3it9417kma5f7h.apps.googleusercontent.com";
+                opts.ClientSecret = "YcHB674SGseNJzd-67aT8zOU";
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -56,12 +66,19 @@ namespace EastAdvising
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+            //configure cookie authentication
+            var authenticationOptions = new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = LibUnityConfig.GetConfigVariable("GoogleCloudSamples:AuthClientId"),
+                ClientSecret = LibUnityConfig.GetConfigVariable("GoogleCloudSamples:AuthClientSecret"),
+            };
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
 
             app.UseMvc(routes =>
             {
