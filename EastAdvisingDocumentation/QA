@@ -1,6 +1,89 @@
-- Are the appointment reasons hard coded? if so what are the additional appointment types? Should we include an 'other' field? Or should 
-  we just leave the comments field?
-- Any preference for UI design/Admin portal (colors)? Likes/Dislikes from simplybookme
-- An advisor can manually cancel appointments, can they manually create them (like for follow up during an appointment)?
-- What things would you like to see in the general settings? General report?
-- How is your availability set up? What improvements would you like to see?
+Q/A's from points of contact:
+
+*//////////////* BRAD PETERSON *//////////////*
+> 1. We are planning on implementing general reporting features. What are some things you would like to see in the general report? 
+
+* Ease of setting up days and times available
+* Ease of going in to remove days and times (such as if I'm sick or in a meeting)
+* Ability to mass email people that were scheduled if I'm sick for a day (lower priority, but would still be nice)
+* Allowing students to request an over the phone appointment or an online appointment via something like Google Hangouts.  Some people travel 60 minutes just to ask a simple question...
+* Clean interaction with my calendar.  
+
+> 2. How is your availability currently being set up in simplybookme? What improvements would you like to see in the way this is set up? 
+
+I go in and specify something like "My normal weekday is M, T, Th, 1:00 to 5:00" between these dates.  Then I have to go in and edit out special dates (like faculty meetings).  That's been fine, it's a one time setup
+
+To be honest, I don't even do that anymore, it's too hard to keep changing the master password, then have all of us advisors know the password.  I just email Pat, she sets it up for me.  If we could have our own passwords, that would be helpful.
+
+> 3. Are there any UI designs/colors that you particularly like that are in simplybookme that you would like to see in the new appointment system?  How about dislikes? 
+
+Colors?  UI?  I should be evil and give the UI person on your team the hardest job of them all.  So here it is: "I need all information about all appointments I have for the upcoming month to be cleanly displayed simultaneously on my watch.  The colors should detect the current light level in the room and outside and adjust accordingly.  So dark mode for night, bright colors for spring, earth colors for summer, etc.  UI is by far the top priority, and having a functioning product is secondary."
+
+> 4. Are there any UI flows that you particularly like that are in simplybookme that you would like to see in the new appointment system? How about dislikes? 
+
+It's largely been good.  I honestly use the UI once a year.  I mainly only look at what shows up in my calendar.
+
+> 5. One of the general UI requirements is that "all students must select a "reason" for the appointment type". Is there a specific set of reasons you would like to see? Would you like to keep an 'other' option open for the student to input their reason? 
+
+Other is fine, students have weird needs.  I think it would be good to have students write a minimum of 20 characters or so if they choose other.  Sometimes students set up appointments for things that I don't cover, such as general advisement or advising for the WEB, NET, or MS program.
+
+Mainly my appointments are for "Starting the CS degree, needing general advisement" "Starting my first courses at Weber State and the CS degree, needing advisement", "Need help knowing which classes to take", "Financial Aid forms and appeals", and "Efficiently planning future goals to prepare for upcoming degrees or life events"
+
+>6.  Do you have any additional questions Brad?  You are an excellent instructor, and your insights are usually far beyond anything we can conceive.  What have we missed?
+
+Why thank you.  
+
+We are creating a new set of videos for self advisement, in addition to existing FAQ pages.  I would love to have a self advising section.  I'd say that more than half of our appointments could have been solved simply by watching a video.
+
+
+
+
+*//////////////* TED COWAN *//////////////*
+1. We are planning on implementing general reporting features. What are some things you would like to see in the general report?
+
+If the system is integrated with my Google calendar, I require no other reporting features.
+ 
+
+2. How is your availability currently being set up in simplybookme? What improvements would you like to see in the way this is set up?
+
+In youcanbook.me, I am available from 1-4pm on Mondays, Tuesdays and Thursdays by appointment only, and youcanbook.me used to require that I also place an all-day appointment on those days containing the string "IN the office".  The system allows me to set that students can only book me 3 weeks in advance, and cannot schedule me less than 2 hours prior to the requested date and time.  If I am going to be absent during my regular office hours, in the past I was able to simply delete the "IN the office" all-day appointment, but that feature has since been removed from the free tier I am currently using. 
+
+The "IN the office" feature is very handy.  Because that feature is no longer available to me, I have to actually create a 3-hour appointment for every day I am out of the office, such as for every day last week during Spring Break (or change my default office hours, which is a major pain).
+ 
+
+3. Are there any UI designs/colors that you particularly like that are in simplybookme that you would like to see in the new appointment system?  How about dislikes?
+
+I do not use simplybook.me because of the way it is currently configured for the CS department.  Youcanbook.me allows me to publish a single URL that goes directly to my appointment scheduling page.  Look at http://webercsatslcc.youcanbook.me.
+
+Simplybook.me begins with a page containing  a list of advisors. A student that needs me usually does not want the option of driving to Ogden or Davis to see an alternative advisor, or they want help with an assignment in one of classes and they really do need to speak to me.  Simplybook.me takes the student to a page where they must choose an advisor, then click through the dialogs to create the appointment.  One click should select the date and time, and then a second page should gather all the required information.
+
+Colors and UI designs in general aren't too important to me, but I do like to have options to choose a color scheme of my liking.
+ 
+
+4. Are there any UI flows that you particularly like that are in simplybookme that you would like to see in the new appointment system? How about dislikes?
+
+See #3 above.  One feature I don't have with Youcanbook.me is reminder emails.  Simplybook.me has email reminders and this is a very important feature for students, particularly the irresponsible ones.  I recall a student asserting that he was not responsible in any way for missing our appointment because my system did not send him a reminder.  
+ 
+
+5. One of the general UI requirements is that "all students must select a "reason" for the appointment type". Is there a specific set of reasons you would like to see? Would you like to keep an 'other' option open for the student to input their reason?
+
+Youcanbook.me presents the student with just a text box where they can enter their reason for the appointment.  It would be nice if there were a few canned responses, such as "Registration issues", "Graduation questions", "I am a New Student", "Questions about an assignment" or "Other", where "Other" popped up a text box for an explanation.
+
+
+
+
+*//////////////* PAT DEJONG *//////////////*
+1. Number of appointments, type of appointment. (This might help us justify another advisor)
+
+2. I use simplybook.me and have also used youcanbook.me, both work similarly. I setup my available time in simplybookme and it is sync'd with my Weber State calendar.  If my Weber calendar is busy during a typical appointment time, it won't allow the appointment.  
+
+3. Use Weber's color palette.  https://www.weber.edu/brand/color_palette.html
+
+4. Reminder emails.
+
+5.  1.Prospective student (not admitted)/Initial appointment (admitted)
+     2. General Advising (plan next semester, concerns, graduation sign off)
+     3. Bounce Back
+     4. Financial Aid Plan
+
+I don't see students for assignments, but that would be a good one for Ted and Brad.
