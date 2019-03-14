@@ -13,11 +13,6 @@ using EastAdvising.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-using Microsoft.AspNetCore.Owin;
-using Microsoft.AspNetCore.Owin.Security.Google;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.AspNet.Identity;
-
 namespace EastAdvising
 {
     public class Startup
@@ -66,12 +61,6 @@ namespace EastAdvising
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-            //configure cookie authentication
-            var authenticationOptions = new GoogleOAuth2AuthenticationOptions()
-            {
-                ClientId = LibUnityConfig.GetConfigVariable("GoogleCloudSamples:AuthClientId"),
-                ClientSecret = LibUnityConfig.GetConfigVariable("GoogleCloudSamples:AuthClientSecret"),
-            };
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
