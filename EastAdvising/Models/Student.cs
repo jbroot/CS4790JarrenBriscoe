@@ -12,11 +12,14 @@ namespace EastAdvising.Models
         public int StudentId { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Display(Name = "W#")]
         public string WNumber { get; set; }
 
         [Display(Name = "Full Name")]
@@ -32,5 +35,8 @@ namespace EastAdvising.Models
         [Phone]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
+
+        //Navigation Properties
+        public virtual ICollection<Appointment> Appointment { get; set; }
     }
 }

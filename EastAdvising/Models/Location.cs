@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EastAdvising.Models
 {
     public class Location
     {
         public int LocationId { get; set; }
-        [Required]
-        public int Campus { get; set; }
+
         public string Building { get; set; }
         public string RoomNumber { get; set; }
 
-        //public ICollection<Advisor> Advisors{ get; set; }
+        //[RegularExpression("\bD\b|\bM\b|\bS\b)")] //Campus = D (Davis) | M (Main) | S(SLCC)
+        //TODO: Maybe break this out into it's own table (?)
+        public string Campus { get; set; }
+
+        //Navigation Properties
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Availability> Availabilities { get; set; }
     }
 }

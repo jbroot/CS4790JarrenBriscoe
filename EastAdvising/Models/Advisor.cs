@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,9 +12,11 @@ namespace EastAdvising.Models
         public int AdvisorId { get; set; }
 
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Display(Name = "Full Name")]
@@ -28,9 +31,17 @@ namespace EastAdvising.Models
         [EmailAddress]
         public string EmailAddress { get; set; }
 
-        public virtual ICollection<Availability> Availabilities { get; set; }
-        //public virtual ICollection<Location> Locations { get; set; }
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        [Required]
+        [Display(Name = "Phone Number")]
+        public int PhoneNumber { get; set; }
 
+        public int PreferredLocation { get; set; } //LocationId
+        
+        //Navigation Properties
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Availability> Availabilities { get; set; }
+
+        [ForeignKey("MajorId")]
+        public virtual Major Major { get; set; }
     }
 }
