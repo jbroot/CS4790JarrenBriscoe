@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="228103239088-jh9iddrro090egk64j3it9417kma5f7h.apps.googleusercontent.com">
     <title>@ViewData["Title"] - EastAdvising</title>
-
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -37,6 +37,16 @@
                 <partial name="_LoginPartial" />
             </div>
         </div>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <a href="#" onclick="signOut();">Sign out</a>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+        </script>
     </nav>
 
     <partial name="_CookieConsentPartial" />
@@ -49,6 +59,7 @@
         </footer>
     </div>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

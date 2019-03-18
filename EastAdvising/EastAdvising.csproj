@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
     <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
     <Compile Remove="Data\Migrations\20190313010358_Initial.cs" />
@@ -21,13 +22,22 @@
   </ItemGroup>
 
   <ItemGroup>
+
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.38.0.1508" />
+
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.7" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
+
     <Folder Include="Data\Migrations\" />
+
+    <Content Update="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+
   </ItemGroup>
 
 </Project>

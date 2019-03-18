@@ -34,6 +34,11 @@ namespace EastAdvising
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddAuthentication().AddGoogle(opts => {
+                opts.ClientId = "228103239088-jh9iddrro090egk64j3it9417kma5f7h.apps.googleusercontent.com";
+                opts.ClientSecret = "YcHB674SGseNJzd-67aT8zOU";
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -66,6 +71,7 @@ namespace EastAdvising
 
             app.UseAuthentication();
             //app.UseSession();
+
 
             app.UseMvc(routes =>
             {
