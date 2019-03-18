@@ -5,28 +5,38 @@
     font-family: 'karla-regular';
     src: url('../fonts/karla/karla-regular.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'montserrat-bold';
     src: url('../fonts/montserrat/montserrat-bold.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'montserrat-semibold';
     src: url('../fonts/montserrat/montserrat-semibold.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('../fonts/montserrat/montserrat-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'karla-bold';
+    src: url('../fonts/karla/karla-bold.ttf') format('truetype');
+}
 /*
     Root setup for fonts and font colors
 */
 :root {
-
-    /* Fonts Variables*/
+    /* Fonts Variables */
     --header_text_font: 'montserrat-semibold';
     --text_font: 'karla-regular';
-    --sub_header_font: 'montserrat-regular';
+    --sub_header_font: 'karla-regular';
+    --test_subheader_font: 'karla-bold';
     --text_color: var(--grey_purple);
-    --header_text_color: var(--the_weber_purple);
+    --header_text_color: var(--blackest_purple);
     --subheader_text_color: var(--less_dark_blue);
-
     /* Monochromatic Colors */
     --darkest_mono_purple: #3f1a5b;
     --less_darker_mono_purpler: #431d5f;
@@ -35,8 +45,7 @@
     --third_darker_mono_purple: #4c2668;
     --fourth_darker_mono_purple: #492365;
     --fifth_darker_mono_purple: #462062;
-
-    /* Linear gradient to complentary #0b8800*/
+    /* Linear gradient to complentary #0b8800 (green) */
     --weber_purple: #492365;
     --grey_purple: #4c375a;
     --grey: #4b484f;
@@ -44,23 +53,20 @@
     --grey_green_green: #406835;
     --almost_green: #317824;
     --green: #0b8800;
-
-    /* Shades to Black*/
+    /* Shades to Black */
     --dark_weber_purple: #3e1f54;
     --moreDark_weber_purple: #321b43;
     --darkest_weber_purple: #281634;
     --black_purple: #1d1224;
     --blackest_purple: #130a16;
     --black: #000000;
-
-    /* Tint to White*/
+    /* Tint to White */
     --light_weber_purple: #67457d;
     --lighter_weber_purple: #846796;
     --lightest_weber_purple: #a28bb0;
     --white_weber_purple: #c1b1ca;
     --almost_white: #e0d7e4;
     --white: #000000;
-
     /* Tones going to Grey */
     --almost_weber_purple: #492960;
     --greyer_weber_purple: #492f5a;
@@ -69,32 +75,26 @@
     --grey_purple: #463f4a;
     --pure_grey: #444444;
     --lilac: #c8a2c8;
-
     /* Adjacent Color Scheme */
-
     /* Purple */
     --the_weber_purple: #492365;
     --dark_purple: #1c032f;
     --less_dark_purple: #310f4a;
     --light_purple: #603a7c;
     --lightest_purple: 816099;
-
     /* Blue */
     --the_blue: #342868;
     --dark_blue: #0d0630;
     --less_dark_blue: #1d134c;
     --light_blue: #4c407f;
     --lightest_blue: #71679e;
-
     /* Pink */
     --the_pink: #742358;
     --dark_pink: #360023;
     --less_dark_pink: #550d3c;
     --light_pink: #8e3e72;
     --lightest_pink: #b06b98;
-
     /* Traid Color Scheme */
-
     /* Yellow */
     --the_yellow: #97822e;
     --dark_yellow: #463800;
@@ -108,18 +108,20 @@
     --light_green: #91ae4c;
     --lightest_green: #bed782;
 }
-
-.heading_text{
+/*
+    TEXT settings
+*/
+.heading_text {
     font-family: var(--header_text_font);
     color: var(--header_text_color);
 }
 
-.subheading_text{
+.subheading_text {
     font-family: var(--sub_header_font);
     color: var(--lightest_blue);
 }
 
-.text{
+.text {
     font-family: var(--text_font);
     color: var(--text_color);
 }
@@ -128,10 +130,9 @@
     Header grid
 */
 
-.header_grid{
+.header_grid {
     display: grid;
-    grid-template-areas: 'header_left header_middle header_right'
-                         'header_bottom header_bottom header_bottom';
+    grid-template-areas: 'header_left header_middle header_right' 'header_bottom header_bottom header_bottom';
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     border: solid;
