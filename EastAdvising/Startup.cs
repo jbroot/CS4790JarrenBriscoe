@@ -65,7 +65,7 @@ namespace EastAdvising
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-            app.UseSession();
+            //app.UseSession();
 
             app.UseMvc(routes =>
             {
