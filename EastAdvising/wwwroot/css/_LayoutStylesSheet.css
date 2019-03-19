@@ -33,10 +33,12 @@
     --header_text_font: 'montserrat-semibold';
     --text_font: 'karla-regular';
     --sub_header_font: 'karla-regular';
-    --test_subheader_font: 'karla-bold';
+    --text_subheader_font: 'karla-bold';
+    --small_subheader_font: 'montserrat-regular';
     --text_color: var(--grey_purple);
-    --header_text_color: var(--blackest_purple);
-    --subheader_text_color: var(--less_dark_blue);
+    --header_text_color: var(--dark_purple);
+    --subheader_text_color: var(--less_dark_purple);
+    --small_subheader_color: var(--light_purple);
     /* Monochromatic Colors */
     --darkest_mono_purple: #3f1a5b;
     --less_darker_mono_purpler: #431d5f;
@@ -101,7 +103,7 @@
     --dark_yellow: #463800;
     --less_dark_yellow: #6e5c10;
     --light_yellow: #b8a450;
-    --lightest_yellow: #efd38a;
+    --lightest_yellow: #e4d38a;
     /* Green */
     --the_green: #718e2b;
     --dark_green: #2f4200;
@@ -119,7 +121,12 @@
 
 .subheading_text {
     font-family: var(--sub_header_font);
-    color: var(--lightest_blue);
+    color: var(--subheader_text_color);
+}
+
+.small_subheading_text{
+    font-family: var(--small_subheader_font);
+    color: var(--small_subheader_color);
 }
 
 .text {
@@ -131,16 +138,46 @@
     Header grid
 */
 
-.header_grid {
-    display: grid;
-    grid-template-areas: 'header_left header_middle header_right' 'header_bottom header_bottom header_bottom';
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr;
-    border: solid;
-    border-color: var(--darkest_weber_purple);
-    border-radius: 5px;
-    padding: 10px;
+@media screen and (min-width: 800px) {
+    .header_grid {
+        display: grid;
+        grid-template-areas: 'header_left header_middle header_right' 'header_bottom header_bottom header_bottom';
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        border: solid;
+        border-color: var(--darkest_weber_purple);
+        border-radius: 5px;
+        padding: 10px;
+        background-color: var(--almost_white);
+    }
 }
+
+@media screen and (max-width: 800px) {
+    .header_grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        border: solid;
+        background-color: var(--almost_white);
+        
+    }
+
+    .header_middle {
+        grid-area: header_middle;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+
+
 
 .header_left {
     grid-area: header_left;
@@ -178,4 +215,70 @@
     justify-content: center;
     align-content: center;
     align-items: flex-start;
+}
+
+/*
+    Footer Grid
+*/
+
+@media screen and (min-width: 800px){
+    .grid_footer {
+        display: grid;
+        
+        grid-template-areas: 'footer_header1 footer_header footer_header' 'footer_left footer_middle footer_right';
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 10px;
+        background-color: var(--lightest_green);
+        border: solid;
+        border-width: 1px;
+        border-color: var(--less_dark_green);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .grid_footer {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-areas: 'footer_header1 footer_header footer_header' 'footer_left footer_middle footer_right';
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        align-content: space-between;
+        background-color: var(--lightest_green);
+        padding: 20px;
+        border: solid;
+        border-width: 1px;
+        border-color: var(--less_dark_green);
+    }
+}
+
+
+
+.footer_header1 {
+    grid-area: footer_header1;
+    display: flex;
+    margin-left: 10px;
+}
+
+.footer_left {
+    grid-area: footer_left;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_middle {
+    grid-area: footer_middle;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_right {
+    grid-area: footer_right;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright{
+    margin: 10px;
 }

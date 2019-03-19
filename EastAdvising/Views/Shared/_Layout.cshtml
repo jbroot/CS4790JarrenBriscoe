@@ -37,8 +37,7 @@
     <!--HEADER-->
     <div class="header_grid">
         <div class="header_left">
-            <img class="imagesOfHeader" src="~/images/index.png" />
-
+            <img src="~/images/weber_header_logo_with_color.png" />
         </div>
 
         <div class="header_middle">
@@ -76,11 +75,105 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - EastAdvising</p>
-        </footer>
+
+
     </div>
+    <footer class="grid_footer">
+        <div class="footer_header1">
+            <h3 class="heading_text">About Us</h3>
+
+        </div>
+
+        <div class="footer_left">
+            <table class="text">
+                <tr>
+                    <th class="small_subheading_text">Working hours</th>
+                </tr>
+
+                <tr>
+                    <td>Monday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="footer_middle">
+
+            <div>
+                <table class="text">
+                    <tr>
+                        <th class="small_subheading_text"><i class="fas fa-map-marker-alt"></i> Office Location</th>
+                    </tr>
+                    <tr>
+                        <td>1465 Edvalson Street</td>
+                    </tr>
+                    <tr>
+                        <td>Ogden, Utah</td>
+
+                    </tr>
+                    <tr>
+                        <td>Technical Education Building</td>
+
+                    </tr>
+                    <tr>
+                        <td>Room 110</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        <div class="footer_right">
+            <div>
+                <table class="text">
+                    <tr>
+                        <th class="small_subheading_text">Advisor</th>
+                    </tr>
+
+                    <tr>
+                        <td><i class="fas fa-signature"></i> </td>
+                        <td>Ranee Dearden</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-mobile-alt"></i></td>
+                        <td>801-626-7929</td>
+                    </tr>
+                    <tr>
+                        <td><i class="far fa-envelope"></i></td>
+                        <td>raneedearden@weber.edu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </footer>
+    <hr />
+    <p class="text copyright">&copy; 2019 - Weber State University</p>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
