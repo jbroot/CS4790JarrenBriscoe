@@ -17,9 +17,12 @@ namespace EastAdvising
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            if (env.IsDevelopment())
+            {
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -35,8 +38,8 @@ namespace EastAdvising
             });
 
             services.AddAuthentication().AddGoogle(opts => {
-                opts.ClientId = "228103239088-jh9iddrro090egk64j3it9417kma5f7h.apps.googleusercontent.com";
-                opts.ClientSecret = "YcHB674SGseNJzd-67aT8zOU";
+                opts.ClientId = Configuration["Authentication:Google:ClientId"];
+                opts.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
