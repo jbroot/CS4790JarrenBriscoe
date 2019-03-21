@@ -67,13 +67,9 @@
 
     <partial name="_CookieConsentPartial" />
 
-    <ul>
-        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-    </ul>
 
-    <div class="container body-content">
+
+    <div class="container-fluid body-content">
         @RenderBody()
 
 
@@ -173,6 +169,11 @@
         </div>
     </footer>
     <hr />
+    <ul>
+        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    </ul>
     <p class="text copyright">&copy; 2019 - Weber State University</p>
 
     <environment include="Development">

@@ -134,6 +134,11 @@
     color: var(--text_color);
 }
 
+.cool_heading_text{
+    font-family: montserrat-regular;
+    color: black;
+}
+
 /*
     Header grid
 */
@@ -144,11 +149,13 @@
         grid-template-areas: 'header_left header_middle header_right' 'header_bottom header_bottom header_bottom';
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: 1fr;
-        border: solid;
-        border-color: var(--darkest_weber_purple);
+        border: groove;
+        border-width: 1px;
+        border-color: var(--lightest_blue);
         border-radius: 5px;
         padding: 10px;
         background-color: var(--almost_white);
+        margin-bottom: 10px;
     }
 }
 
@@ -175,9 +182,6 @@
         margin: 10px;
     }
 }
-
-
-
 
 .header_left {
     grid-area: header_left;

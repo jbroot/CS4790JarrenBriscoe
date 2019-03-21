@@ -1,0 +1,293 @@
+﻿/*
+    FONTS
+*/
+/*
+    FONTS
+*/
+@font-face {
+    font-family: 'karla-bold';
+    src: url('../fonts/karla/karla-bold.ttf') format('truetype'), url('../fonts/karla/karla-bolditalic.ttf') format('truetype'), url('../fonts/karla/karla-italic.ttf') format('truetype'), url('../fonts/karla/karla-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'karla-bolditalic';
+    src: url('../fonts/karla/karla-bolditalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'karla-italic';
+    src: url('../fonts/karla/karla-italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'karla-regular';
+    src: url('../fonts/karla/karla-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'montserrat-semibold';
+    src: url('../fonts/montserrat/montserrat-semibold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('../fonts/montserrat/montserrat-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'montserrat-italic';
+    src: url('../fonts/montserrat/montserrat-italic.ttf') format('truetype');
+}
+:root {
+    /* Fonts Variables */
+    --header_text_font: 'montserrat-semibold';
+    --text_font: 'karla-regular';
+    --sub_header_font: 'karla-regular';
+    --text_subheader_font: 'karla-bold';
+    --small_subheader_font: 'montserrat-regular';
+    --form_subheader_font: 'montserrat-regular';
+    --montserrat_italic_font: 'montserrat-italic';
+    --text_color: var(--grey_purple);
+    --header_text_color: var(--dark_purple);
+    --subheader_text_color: var(--less_dark_purple);
+    --form_subheader_color: var(--the_blue);
+    /* Monochromatic Colors */
+    --darkest_mono_purple: #3f1a5b;
+    --less_darker_mono_purpler: #431d5f;
+    --lightest_mono_purple: #532c6f;
+    --second_darker_mono_purple: #4f2296b;
+    --third_darker_mono_purple: #4c2668;
+    --fourth_darker_mono_purple: #492365;
+    --fifth_darker_mono_purple: #462062;
+    /* Linear gradient to complentary #0b8800 (green) */
+    --weber_purple: #492365;
+    --grey_purple: #4c375a;
+    --grey: #4b484f;
+    --grey_green: #485843;
+    --grey_green_green: #406835;
+    --almost_green: #317824;
+    --green: #0b8800;
+    /* Shades to Black */
+    --dark_weber_purple: #3e1f54;
+    --moreDark_weber_purple: #321b43;
+    --darkest_weber_purple: #281634;
+    --black_purple: #1d1224;
+    --blackest_purple: #130a16;
+    --black: #000000;
+    /* Tint to White */
+    --light_weber_purple: #67457d;
+    --lighter_weber_purple: #846796;
+    --lightest_weber_purple: #a28bb0;
+    --white_weber_purple: #c1b1ca;
+    --almost_white: #e0d7e4;
+    --white: #000000;
+    /* Tones going to Grey */
+    --almost_weber_purple: #492960;
+    --greyer_weber_purple: #492f5a;
+    --almost_grey_weber_purple: #483555;
+    --pure_grey_weber_purple: #473a4f;
+    --grey_purple: #463f4a;
+    --pure_grey: #444444;
+    --lilac: #c8a2c8;
+    /* Adjacent Color Scheme */
+    /* Purple */
+    --the_weber_purple: #492365;
+    --dark_purple: #1c032f;
+    --less_dark_purple: #310f4a;
+    --light_purple: #603a7c;
+    --lightest_purple: 816099;
+    /* Blue */
+    --the_blue: #342868;
+    --dark_blue: #0d0630;
+    --less_dark_blue: #1d134c;
+    --light_blue: #4c407f;
+    --lightest_blue: #71679e;
+    /* Pink */
+    --the_pink: #742358;
+    --dark_pink: #360023;
+    --less_dark_pink: #550d3c;
+    --light_pink: #8e3e72;
+    --lightest_pink: #b06b98;
+    /* Traid Color Scheme */
+    /* Yellow */
+    --the_yellow: #97822e;
+    --dark_yellow: #463800;
+    --less_dark_yellow: #6e5c10;
+    --light_yellow: #b8a450;
+    --lightest_yellow: #e4d38a;
+    /* Green */
+    --the_green: #718e2b;
+    --dark_green: #2f4200;
+    --less_dark_green: #4e680f;
+    --light_green: #91ae4c;
+    --lightest_green: #bed782;
+}
+
+@media screen and (min-width: 850px) {
+    .appointment_grid {
+        display: grid;
+        grid-template-areas: 'form_left form_right' 'form_bottom_left form_bottom_right';
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        background-color: var(--light_weber_purple);
+        margin: 10px;
+        padding: 20px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .appointment_grid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex: 1;
+        align-content: center;
+        justify-content: space-around;
+        grid-template-areas: 'form_left form_right' 'form_bottom_left form_bottom_right';
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        background-color: whitesmoke;
+    }
+
+    .form_left {
+        grid-area: form_left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .form_right {
+        grid-area: form_right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+        margin: 20px;
+    }
+}
+
+
+.form_left {
+    grid-area: form_left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.form_right {
+    grid-area: form_right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form_bottom_left {
+    grid-area: form-bottom_left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form_bottom_right {
+    grid-area: form_bottom_right;
+}
+
+
+/*
+    The Form Set up Appointment
+*/
+
+.font {
+    font-family: var(--text_font);
+    color: var(--text_color);
+}
+
+.form_style {
+    max-width: 450px;
+    padding: 20px 12px 10px 20px;
+    font: var(--header_text_font);
+    color: var(--header_text_color);
+    background-color: var(--lightest_green);
+    border-radius: 10px;
+}
+
+    .form_style li {
+        padding: 0;
+        display: block;
+        list-style: none;
+        margin: 10px 0 0 0;
+    }
+
+    .form_style label {
+        margin: 0 0 3px 0;
+        padding: 0px;
+        display: block;
+        font-family: var(--header_text_font);
+        color: var(--header_text_color);
+    }
+
+    .form_style .required {
+        color: red;
+    }
+
+    .form_style .field_long {
+        width: 100%;
+    }
+
+
+    .form_style .field_textarea {
+        height: 100px;
+    }
+
+    .form_style p {
+        font-family: var(--montserrat_italic_font);
+    }
+
+    .form_style .field_select {
+        width: 65%;
+        font-family: var(--text_font);
+        color: var(--text_color);
+    }
+
+    .form_style input {
+        font-family: var(--text_font);
+        color: var(--text_color);
+        padding: 2px 0px 2px 5px;
+        border: solid 1px;
+    }
+
+    .form_style textarea, select, option {
+        font-family: var(--text_font);
+        color: var(--text_color);
+        padding: 2px 0px 2px 5px;
+    }
+
+        .form_style input[type=text]:focus,
+        .form_style textarea:focus,
+        .form_style select:focus {
+            -moz-box-shadow: 0 0 8px var(--dark_green);
+            -webkit-box-shadow: 0 0 8px var(--dark_green);
+            box-shadow: 0 0 8px var(--dark_green);
+            border: 1px solid var(--the_green);
+        }
+
+    .form_style input[type=text],
+    textarea,
+    select {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border: 1px solid #BEBEBE;
+        margin: 0px;
+        outline: none;
+    }
+
+.hover_me:active {
+    border: solid;
+    border-color: red;
+}
+
+.select_box {
+    display: flex;
+    justify-content: space-between;
+}

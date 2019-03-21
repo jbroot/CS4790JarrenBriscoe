@@ -1,5 +1,85 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<p>Hello from joe :)</p>
+<link href="~/css/SetUpAppointment.css" rel="stylesheet" />
+
+<h1 class="cool_heading_text"><i class="far fa-calendar-check"></i> Make an appointment</h1>
+
+
+<form class="appointment_grid">
+
+    <div class="form_left">
+
+    </div>
+
+    <div class="form_right">
+
+        <ul class="form_style">
+            <li>
+                <label>Full Name<span class="required">*</span></label>
+                <input type="text" placeholder="first" />
+                <input type="text" placeholder="last" />
+            </li>
+            <li>
+                <label>Email<span class="required">*</span></label>
+                <input type="text" class="field_long" />
+            </li>
+            <li>
+                <label>Phone</label>
+                <input type="text" class="field_long" />
+            </li>
+            <li>
+                <label>W# Number</label>
+                <input type="text" class="field_long" />
+            </li>
+
+            <li>
+                <label>Comments</label>
+                <textarea class="field_long field_textarea focus_comments"> </textarea>
+            </li>
+            <li>
+
+                <label>Reason for Visit<span class="required">*</span></label>
+                <select class="field_select">
+                    <option value="volvo"></option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </li>
+
+            <li>
+
+                <label>Location<span class="required">*</span></label>
+                <select class="field_select">
+                    <option class="hover_me" value="volvo"></option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </li>
+
+            <li>
+                <p>(required fields)<span class="required">*</span></p>
+            </li>
+        </ul>
+    </div> <!--END form-->
+
+
+
+    <div class="form_bottom_left">
+
+    </div>
+
+    <div class="form_bottom_right">
+    </div>
+
+
+</form>
+
+
+
+
 
