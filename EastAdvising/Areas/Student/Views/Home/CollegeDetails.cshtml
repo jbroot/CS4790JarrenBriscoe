@@ -1,0 +1,27 @@
+﻿@model EastAdvising.Models.College
+<br /> <br />
+       <div class="row">
+           <div class="form-group row">
+               <div>
+                   <label asp-for="Departments"></label>
+                   @foreach (var dep in @Model.Departments)
+                   {
+                       <div>
+                           <label style="font-size:23px;color:steelblue;">@dep.DepartmentName</label>
+                           <a asp-action="MajorDetails" asp-controller="Home" class="btn btn-info" asp-route-id="@dep.DepartmentId"> View Department Majors</a>
+
+                       </div>
+
+
+                   }
+               </div>
+               <br />
+
+
+
+
+           </div>
+           
+       </div>
+       <a asp-action="Index" class="btn btn-success">Back to Colleges</a>
+

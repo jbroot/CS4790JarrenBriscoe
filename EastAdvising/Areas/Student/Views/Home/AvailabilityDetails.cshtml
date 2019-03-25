@@ -1,0 +1,29 @@
+﻿@model EastAdvising.Models.Availability
+
+<form method="post" asp-action="AvailabilityDetails2">
+    <div class="p-4 border rounded">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="StartTime.Date" ></label>
+            </div>
+            <div class="col-5">
+                <input type="date" name="date1" class="form-control" />
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Advisor"></label>
+            </div>
+            <div class="col-5">
+                <input hidden asp-for="AdvisorId" name="id" class="form-control" />
+                <input readonly asp-for="Advisor.FullName"  class="form-control" />
+            </div>
+
+        </div>
+        <input type="submit" class="btn btn-primary" value="AvailabilityDetails2"/>
+       
+    </div>
+   
+</form>
