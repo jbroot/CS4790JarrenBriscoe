@@ -38,8 +38,8 @@ namespace EastAdvising
             });
 
             services.AddAuthentication().AddGoogle(opts => {
-                opts.ClientId = Configuration["Authentication:Google:ClientId"];
-                opts.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+                opts.ClientId = "228103239088-g8bsv3m6fkadkv2co0cqtoqsds81869h.apps.googleusercontent.com";
+                opts.ClientSecret = "lsDpFih65UKFPO-SVAnPu6s8";
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
