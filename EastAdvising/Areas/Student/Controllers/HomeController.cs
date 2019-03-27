@@ -87,9 +87,9 @@ namespace EastAdvising.Controllers
                                                 .ToListAsync();
             return View(availabilityDetails2);
         }
-        public async Task<IActionResult> AppointmentDetails(int id1, int id2, DateTime time1) {
+        public ViewResult AppointmentDetails(int id1, int id2, DateTime time1) {
 
-
+            //problems happen here :(
             AppointmentVM.Appointment.AdvisorId.Equals(id1);
             AppointmentVM.Appointment.LocationId = id2;
             AppointmentVM.Appointment.AppointmentDateTime = time1;
