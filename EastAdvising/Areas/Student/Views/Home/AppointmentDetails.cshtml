@@ -1,0 +1,86 @@
+﻿@model EastAdvising.Models.ViewModels.AppointmentViewModels
+@using EastAdvising.Extensions
+<br /> <br />
+<div class="row">
+
+    
+        <form method="post" asp-action="AppointmentDetails" enctype="multipart/form-data">
+            <div class="p-4 border rounded">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Student.FirstName"></label>
+                    </div>
+                    <div>
+                        <input asp-for="Student.FirstName" class="form-control" />
+                    </div>
+
+                </div>
+
+             
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Student.LastName"></label>
+                    </div>
+                    <div>
+                        <input asp-for="Student.LastName" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Student.EmailAddress"></label>
+                    </div>
+                    <div>
+                        <input asp-for="Student.EmailAddress" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Student.PhoneNumber"></label>
+                    </div>
+                    <div>
+                        <input asp-for="Student.PhoneNumber" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Student.WNumber"></label>
+                    </div>
+                    <div>
+                        <input asp-for="Student.WNumber" class="form-control" />
+                    </div>
+
+                </div>
+          
+                
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Appointment.Comments"></label>
+                    </div>
+                    <div>
+                        <textarea  asp-for="Appointment.Comments" class="form-control"></textarea>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="Appointment.Status"></label>
+                    </div>
+                    <div>
+                        <input readonly asp-for="Appointment.Status" value="A" class="form-control" />
+                    </div>
+
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="AppointmentDetails" />
+
+            </div>
+        </form>
+    
+
+</div>

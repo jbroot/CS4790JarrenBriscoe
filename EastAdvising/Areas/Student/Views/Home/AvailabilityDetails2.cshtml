@@ -1,0 +1,48 @@
+﻿@model List<EastAdvising.Models.Availability>
+
+<br /> <br />
+<div class="row">
+    
+    @foreach (var ad in Model)
+    {
+    <form method="post" asp-action="AppointmentDetails">
+        <div class="p-4 border rounded">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <div>
+                    <label asp-for="@ad.StartTime"></label>
+                </div>
+                <div>
+                    <input readonly asp-for="@ad.StartTime" name="time1" class="form-control" />
+                    <input hidden asp-for="@ad.AvailabilityId" name="id3" class="form-control" />
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div>
+                    <label asp-for="@ad.Location"></label>
+                </div>
+                <div>
+                    <input hidden asp-for="@ad.LocationId" name="id2" class="form-control" />
+                    <input readonly asp-for="@ad.Location.Campus" class="form-control" />
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-2">
+                    <label asp-for="@ad.Advisor"></label>
+                </div>
+                <div class="col-5">
+                    <input hidden asp-for="@ad.AdvisorId" name="id1" class="form-control" />
+                    <input readonly asp-for="@ad.Advisor.FullName" class="form-control" />
+                </div>
+
+            </div>
+            <input type="submit" class="btn btn-primary" value="AppointmentDetails" />
+
+        </div>
+    </form>
+    }
+
+</div>
+
