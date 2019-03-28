@@ -1,26 +1,23 @@
 ﻿@model List<EastAdvising.Models.College>
-<br /> <br />
-<div class="row">
+
+<div class="container card_box">
     @foreach (var colleges in Model)
     {
-        <div class="col-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">
-                        <label class="small_subheading_text" style="font-size:23px;color:steelblue;">@colleges.CollegeName</label>
-                    </h4>
+            <div class="card my_card">
+                <div class="card-header my_card_header">
+                   <h5>@colleges.CollegeName</h5>
+                </div>  
+                
+                <div class="card-body my_card_body">
+                    <img src="~/images/weber-state-university-squarelogo_emblem.png" class="img-thumbnail img-fluid card_image" />
                 </div>
 
-               
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        
-                        <a asp-action="CollegeDetails" asp-controller="Home" class="btn btn-info" asp-route-id="@colleges.CollegeId"> View College Departments</a>
-                    </div>
+                <div class="card-footer my_card_footer">
+                    
+                    <a asp-action="CollegeDetails" asp-controller="Home"
+                       class="btn btn-primary my_button button"
+                       asp-route-id="@colleges.CollegeId">View Department</a>
                 </div>
-
             </div>
-        </div>
-
     }
 </div>

@@ -83,7 +83,7 @@
     --dark_purple: #1c032f;
     --less_dark_purple: #310f4a;
     --light_purple: #603a7c;
-    --lightest_purple: 816099;
+    --lightest_purple: #816099;
     /* Blue */
     --the_blue: #342868;
     --dark_blue: #0d0630;
@@ -234,10 +234,11 @@
         justify-content: space-between;
         align-content: space-between;
         padding: 10px;
-        background-color: var(--lightest_green);
+        background-color:;
         border: solid;
         border-width: 1px;
-        border-color: var(--less_dark_green);
+        border-color: var(--light_blue);
+        margin-top: 30px;
     }
 }
 
@@ -251,6 +252,7 @@
         align-content: space-between;
         background-color: var(--lightest_green);
         padding: 20px;
+        margin-top: 30px;
         border: solid;
         border-width: 1px;
         border-color: var(--less_dark_green);
@@ -285,4 +287,78 @@
 
 .copyright{
     margin: 10px;
+}
+
+/*
+    Buttons
+
+    .my_button{
+    background-color: var(--weber_purple);
+    font-family: montserrat-regular;
+}
+*/
+
+.my_button.btn {
+    background-color: var(--lightest_mono_purple);
+    font-family: montserrat-regular;
+    border: none;
+    border: solid 2px;
+    border-color: var(--almost_weber_purple);
+}
+
+.my_button.btn:hover{
+    background-color: var(--darkest_mono_purple);
+    border: solid 2px;
+    border-color: var(--lightest_mono_purple);
+}
+
+/*
+    Cards
+*/
+.card_box{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin: 20px;
+    width: 300px;
+    height: auto;
+}
+
+.my_card.card{
+    border-color: var(--less_dark_green);
+}
+
+.my_card_header.card-header {
+    background-color: var(--lightest_green);
+    font-family: montserrat-semibold;
+    color: var(--pure_grey_weber_purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.my_card_body.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.card_image {
+    height: auto;
+    width: 75px;
+}
+
+.my_card_footer.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--lightest_green);
 }
