@@ -111,6 +111,10 @@
     --light_green: #91ae4c;
     --lightest_green: #bed782;
 }
+
+body {
+    
+}
 /*
     TEXT settings
 */
@@ -234,7 +238,7 @@
         justify-content: space-between;
         align-content: space-between;
         padding: 10px;
-        background-color:;
+        background-color: whitesmoke;
         border: solid;
         border-width: 1px;
         border-color: var(--light_blue);
@@ -306,11 +310,12 @@
     border-color: var(--almost_weber_purple);
 }
 
-.my_button.btn:hover{
+.my_button.btn:hover {
     background-color: var(--darkest_mono_purple);
     border: solid 2px;
     border-color: var(--lightest_mono_purple);
 }
+
 
 /*
     Cards
@@ -320,6 +325,7 @@
     justify-content: flex-start;
     align-content: center;
     flex-wrap: wrap;
+
 }
 
 .card{
