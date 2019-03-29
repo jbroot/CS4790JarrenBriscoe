@@ -13,6 +13,6 @@ namespace EastAdvising.Models.ViewModels
         public IEnumerable<Advisor> Advisor { get; set; }
         public IEnumerable<Location> Location { get; set; }
         public IEnumerable<Service> Service { get; set; }
-        public Availability Availability { get; set; }
+        public IEnumerable<Availability> Availability { get; set; }
     }
 }

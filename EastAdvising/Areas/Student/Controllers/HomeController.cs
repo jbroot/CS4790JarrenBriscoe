@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using EastAdvising.Extensions;
 using Microsoft.AspNetCore.Hosting.Internal;
 using EastAdvising.Models.ViewModels;
+using Microsoft.AspNetCore.Http;
 
 namespace EastAdvising.Controllers
 {
@@ -20,7 +21,8 @@ namespace EastAdvising.Controllers
         private readonly HostingEnvironment _hostingEnvironment;
         [BindProperty]
         public AppointmentViewModels AppointmentVM { get; set; }
-
+        public const string SessionKeyAdvisor = "_Advisor";
+        public string SessionInfo_Advisor { get; private set; }
         public HomeController(ApplicationDbContext db, HostingEnvironment hostingEnvironment)
         {
             _db = db;
@@ -31,7 +33,7 @@ namespace EastAdvising.Controllers
                 Service = _db.Service.ToList(),
                 Student = new Models.Student(),
                 Location = _db.Location.ToList(),
-                Availability = new Models.Availability(),
+                Availability = _db.Availability.ToList(),
                 Appointment = new Models.Appointment()
             };
 
@@ -76,9 +78,13 @@ namespace EastAdvising.Controllers
                                                 .FirstOrDefaultAsync();
             return View(availabilityDetails);
         }
+
+        
+
+
         public async Task<IActionResult> AvailabilityDetails2(DateTime Date1, int id)
         {
-
+            
             var availabilityDetails2 = await _db.Availability.Include(m => m.Advisor)
                                                 .Include(m => m.Location)
                                                 .Where(m => m.StartTime.Date == Date1)
@@ -87,28 +93,41 @@ namespace EastAdvising.Controllers
                                                 .ToListAsync();
             return View(availabilityDetails2);
         }
-        public ViewResult AppointmentDetails(int id1, int id2, DateTime time1) {
+        public IActionResult AppointmentDetails(int id1, int id2, DateTime time1){//int id3) {
+                                                                                  //AppointmentVM.Availability = await _db.Availability.Include(m => m.Advisor)
+                                                                                  //.Include(m=> m.Services)
+                                                                                  //int advId = HttpContext.Session.Get<int>("sadvId");                                                               //.SingleOrDefaultAsync(m => m.AvailabilityId == id3);
+                                                                                  //advId = id1;
 
-            //problems happen here :(
-            AppointmentVM.Appointment.AdvisorId.Equals(id1);
-            AppointmentVM.Appointment.LocationId = id2;
-            AppointmentVM.Appointment.AppointmentDateTime = time1;
+            //HttpContext.Session.SetInt32(SessionKeyAdvisor, id1);
+            ViewBag.adId = id1;
+            ViewBag.LocId = id2;
+            ViewBag.timeTime = time1;
+            //HttpContext.Session.Set("advId", advId);
+            //AppointmentVM.Appointment.LocationId = id2;
+            //AppointmentVM.Appointment.AdvisorId = id1;
+
+            //AppointmentVM.Appointment.AppointmentDateTime = time1;
             return View(AppointmentVM);
-        }
+         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AppointmentDetailsPOST() ///we have data binds 
+        
+
+      [HttpPost]
+        public async Task<IActionResult> AppointmentDetails2() ///we have data binds 
         {
-            if (!ModelState.IsValid)
+           /* if (!ModelState.IsValid)
             {
                 return View(AppointmentVM);
-            }
+            }*/
+            
             _db.Student.Add(AppointmentVM.Student);
             
             await _db.SaveChangesAsync();
-            var studentFromdb = _db.Student.Find(AppointmentVM.Student.StudentId);
+           var studentFromdb = _db.Student.Find(AppointmentVM.Student.StudentId);
             AppointmentVM.Appointment.StudentId = studentFromdb.StudentId;
+            // int advId = HttpContext.Session.Get<int>("sadvId");
+           
             _db.Appointment.Add(AppointmentVM.Appointment);
             await _db.SaveChangesAsync();
             return View();
@@ -139,5 +158,6 @@ namespace EastAdvising.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
