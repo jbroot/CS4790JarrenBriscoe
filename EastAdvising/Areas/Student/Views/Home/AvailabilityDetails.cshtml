@@ -8,7 +8,7 @@
                 <label asp-for="StartTime.Date" ></label>
             </div>
             <div class="col-5">
-                <input type="date" name="date1" class="form-control" />
+                <input type="date" name="date1" value="@DateTime.Now" class="form-control" />
             </div>
 
         </div>
@@ -18,11 +18,11 @@
             </div>
             <div class="col-5">
                 <input hidden asp-for="AdvisorId" name="id" class="form-control" />
-                <input readonly asp-for="Advisor.FullName"  class="form-control" />
+                <input readonly asp-for="Advisor.FullName" name="fullname"  class="form-control" />
             </div>
 
         </div>
-        <input type="submit" class="btn btn-primary" value="AvailabilityDetails2"/>
+        <input type="submit" class="btn btn-primary" value="View Appointments"/>
        
     </div>
    
