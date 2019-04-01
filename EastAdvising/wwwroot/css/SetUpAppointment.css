@@ -194,7 +194,7 @@
 
 
 /*
-    The Form Set up Appointment
+    The Form Set up Appointment, Things that are in form format
 */
 
 .font {
@@ -203,12 +203,14 @@
 }
 
 .form_style {
-    max-width: 450px;
+    max-width: 390px;
     padding: 20px 12px 10px 20px;
     font: var(--header_text_font);
     color: var(--header_text_color);
     background-color: var(--lightest_green);
     border-radius: 10px;
+    margin: 30px;
+    
 }
 
     .form_style li {
@@ -226,12 +228,17 @@
         color: var(--header_text_color);
     }
 
+
     .form_style .required {
         color: red;
     }
 
     .form_style .field_long {
         width: 100%;
+    }
+
+    .form_style .field_half{
+        width:49%;
     }
 
 
@@ -282,6 +289,14 @@
         outline: none;
     }
 
+    .form_style.my_button {
+        background-color: var(--lightest_mono_purple);
+        font-family: montserrat-regular;
+        border: none;
+        border: solid 2px;
+        border-color: var(--almost_weber_purple);
+    }
+
 .hover_me:active {
     border: solid;
     border-color: red;
@@ -291,3 +306,5 @@
     display: flex;
     justify-content: space-between;
 }
+
+

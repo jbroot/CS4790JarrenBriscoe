@@ -325,6 +325,7 @@
             background-color: var(--lilac);
 
     */
+    margin: 20px;
 }
 
 .card {
@@ -335,18 +336,20 @@
 
 .my_card.card {
     border-color: var(--less_dark_green);
-   
+    
 }
 
 .my_card_header.card-header {
     font-family: montserrat-semibold;
     background-color: var(--lightest_green);
-    color: var(--pure_grey_weber_purple);
+    color: var(--dark_blue);
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    border-color: var(--less_dark_blue)
+    border-color: var(--the_blue);
+    border-bottom:solid;
+    border-width: .5px;
 }
 
 .my_card_body.card-body {
@@ -355,6 +358,10 @@
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--lightest_green);
+}
+
+.my_card_body_text{
+    font-family: karla-regular;
 }
 
 
@@ -366,9 +373,14 @@
     flex-wrap: wrap;
     background-color: var(--lightest_green);
     border: none;
+    margin: 0px;
 }
 
 .card_image {
     height: auto;
-    width: 75px;
+    width: 100px;
+}
+
+li{
+    list-style: none;
 }

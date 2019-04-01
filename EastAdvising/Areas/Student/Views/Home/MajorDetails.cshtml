@@ -1,28 +1,26 @@
 ﻿@model List<EastAdvising.Models.Major>
-<br /> <br />
-<div class="row">
+
+<div class="container card_box border rounded">
     @foreach (var maj in Model)
     {
-        <div class="col-4">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">
-                        <label style="font-size:23px;color:steelblue;">@maj.MajorName</label>
-                    </h4>
-                </div>
+        <div class="card my_card">
+            <div class="card-header my_card_header">
+                <label><i class="fas fa-building"></i> @maj.MajorName </label>
+            </div>
+            <div class="card-body my_card_body">
+                <img src="~/images/weber-state-university-squarelogo_emblem_green.png" class="img-fluid card_image" />
+            </div>
 
-
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-
-                        <a asp-action="AdvisorDetails" asp-controller="Home" class="btn btn-info" asp-route-id="@maj.MajorId"> View Advisors</a>
-                    </div>
-                </div>
+            <div class="card-footer my_card_footer">
+                <a asp-action="AdvisorDetails" asp-controller="Home" class="btn btn-primary my_button"
+                   asp-route-id="@maj.MajorId"><i class="far fa-eye"></i>View Advisors</a>
 
             </div>
         </div>
-
     }
 </div>
 
-<a asp-action="CollegeDetails" class="btn btn-success">Back to Departments</a>
+<div class="btn-group">
+    <a asp-action="CollegeDetails" class="btn btn-primary my_button">Back to Departments</a>
+</div>
+
