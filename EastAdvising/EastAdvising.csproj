@@ -7,6 +7,8 @@
 
   <ItemGroup>
 
+    <Compile Remove="Controllers\HomeController.cs" />
+
     <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
     <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
     <Compile Remove="Data\Migrations\20190313010358_Initial.cs" />
