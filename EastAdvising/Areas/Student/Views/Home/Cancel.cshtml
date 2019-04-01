@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Cancel";
+}
+
+<h2>Cancel</h2>
+<form method="post" asp-action="Cancel2" enctype="multipart/form-data">
+    <div class="p-4 border rounded">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div>
+                <label>First Name</label>
+            </div>
+            <div>
+                <input name="FN" class="form-control" />
+            </div>
+
+        </div>
+
+
+        <div class="form-group row">
+            <div>
+                <label>Last Name</label>
+            </div>
+            <div>
+                <input name="LN" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label>Email</label>
+            </div>
+            <div>
+                <input name="EM" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div>
+                <label>Appointment Date & Time</label>
+            </div>
+            <div>
+                <input type="datetime-local" name="timeDate" class="form-control" />
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit" />
+
+    </div>
+</form>

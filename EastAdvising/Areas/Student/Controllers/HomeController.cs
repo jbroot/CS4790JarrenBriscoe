@@ -46,6 +46,38 @@ namespace EastAdvising.Controllers
             return View(collegeList);
         }
 
+        public async Task<IActionResult> Cancel()
+        {
+            
+
+            return View();
+        }
+
+        public async Task<IActionResult> Cancel2(string FN, string LN, string EM, DateTime timeDate)
+        {
+            var DeleteApp = await _db.Appointment.Include(m => m.Student)
+                                                .Where(m => m.Student.FirstName == FN)
+                                                .Where(m => m.Student.LastName == LN)
+                                                .Where(m => m.Student.EmailAddress == EM)
+                                                .Where(m => m.AppointmentDateTime == timeDate)
+                                                .ToListAsync();
+            return View(DeleteApp);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Cancel3(int idA) ///we have data binds 
+        {
+            /*if (!ModelState.IsValid)
+             {
+                 return View(AppointmentVM);
+             }*/
+            var AppointmentCancel = await _db.Appointment.FindAsync(idA);
+            AppointmentCancel.Status = 'C';
+            _db.Update(AppointmentCancel);
+            await _db.SaveChangesAsync();
+            return View();
+
+        }
 
         public async Task<IActionResult> CollegeDetails(int id)
         {
@@ -79,10 +111,10 @@ namespace EastAdvising.Controllers
             return View(availabilityDetails);
         }
 
-        
 
 
-        public async Task<IActionResult> AvailabilityDetails2(DateTime Date1, int id)
+
+        public async Task<IActionResult> AvailabilityDetails2(DateTime Date1, int id, string fullname)
         {
             
             var availabilityDetails2 = await _db.Availability.Include(m => m.Advisor)
@@ -91,9 +123,12 @@ namespace EastAdvising.Controllers
                                                 .Where(m=> m.AdvisorId == id)
                                                 //.Where(m => m.StartTime.Date == date)
                                                 .ToListAsync();
+            ViewBag.nameA = fullname;
+            ViewBag.idA = id;
+            ViewBag.date = Date1;
             return View(availabilityDetails2);
         }
-        public IActionResult AppointmentDetails(int id1, int id2, DateTime time1){//int id3) {
+        public IActionResult AppointmentDetails(int id1, int id2, int id3, DateTime time1, string campus, string fullname){//int id3) {
                                                                                   //AppointmentVM.Availability = await _db.Availability.Include(m => m.Advisor)
                                                                                   //.Include(m=> m.Services)
                                                                                   //int advId = HttpContext.Session.Get<int>("sadvId");                                                               //.SingleOrDefaultAsync(m => m.AvailabilityId == id3);
@@ -103,6 +138,9 @@ namespace EastAdvising.Controllers
             ViewBag.adId = id1;
             ViewBag.LocId = id2;
             ViewBag.timeTime = time1;
+            ViewBag.AvId = id3;
+            ViewBag.AdName = fullname;
+            ViewBag.CamN = campus;
             //HttpContext.Session.Set("advId", advId);
             //AppointmentVM.Appointment.LocationId = id2;
             //AppointmentVM.Appointment.AdvisorId = id1;
@@ -114,21 +152,29 @@ namespace EastAdvising.Controllers
         
 
       [HttpPost]
-        public async Task<IActionResult> AppointmentDetails2() ///we have data binds 
+        public async Task<IActionResult> AppointmentDetails2(int AvailId, string AdvName) ///we have data binds 
         {
-           /* if (!ModelState.IsValid)
-            {
-                return View(AppointmentVM);
-            }*/
-            
+            /*if (!ModelState.IsValid)
+             {
+                 return View(AppointmentVM);
+             }*/
+            ViewBag.newId = AvailId;
             _db.Student.Add(AppointmentVM.Student);
             
             await _db.SaveChangesAsync();
-           var studentFromdb = _db.Student.Find(AppointmentVM.Student.StudentId);
+            var studentFromdb = _db.Student.Find(AppointmentVM.Student.StudentId);
+            ViewBag.FN = studentFromdb.FirstName;
+            ViewBag.LN = studentFromdb.LastName;
             AppointmentVM.Appointment.StudentId = studentFromdb.StudentId;
             // int advId = HttpContext.Session.Get<int>("sadvId");
            
             _db.Appointment.Add(AppointmentVM.Appointment);
+            await _db.SaveChangesAsync();
+            var AppointmentFromdb = _db.Appointment.Find(AppointmentVM.Appointment.AppointmentId);
+            ViewBag.adv = AdvName;
+            ViewBag.dateAp = AppointmentFromdb.AppointmentDateTime;
+            Availability Av = await _db.Availability.FindAsync(AvailId);
+            _db.Availability.Remove(Av);
             await _db.SaveChangesAsync();
             return View();
 

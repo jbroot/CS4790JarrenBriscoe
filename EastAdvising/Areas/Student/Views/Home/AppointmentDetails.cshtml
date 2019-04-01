@@ -12,7 +12,7 @@
                         <label asp-for="Student.FirstName"></label>
                     </div>
                     <div>
-                        <input asp-for="Student.FirstName" class="form-control" />
+                        <input asp-for="Student.FirstName"  class="form-control" />
                     </div>
 
                 </div>
@@ -69,47 +69,42 @@
                 </div>
                 <div class="form-group row">
                     <div>
-                        <label asp-for="Appointment.Status"></label>
+                        <input hidden asp-for="Appointment.Status" value="A" class="form-control" />
+                        <input hidden asp-for="Appointment.AdvisorId" value="@ViewBag.adId" class="form-control" />
+                        <input hidden asp-for="Appointment.LocationId" value="@ViewBag.LocId" class="form-control" />
+                        <input hidden type="datetime" asp-for="Appointment.AppointmentDateTime" value="@ViewBag.timeTime" class="form-control" />
+                        <input hidden value="@ViewBag.AvId" name="AvailId" class="form-control" />
+                        <input hidden value="@ViewBag.AdName" name="AdvName" class="form-control" />
                     </div>
-                    <div>
-                        <input readonly asp-for="Appointment.Status" value="A" class="form-control" />
-                    </div>
-
                 </div>
 
-                <div class="form-group row">
-                    <div>
-                        <label asp-for="Appointment.AdvisorId"></label>
-                    </div>
-                    <div>
-                        <input readonly asp-for="Appointment.AdvisorId" value="@ViewBag.adId" class="form-control" />
-                    </div>
-
-                </div>
-
-                <div class="form-group row">
-                    <div>
-                        <label asp-for="Appointment.LocationId"></label>
-                    </div>
-                    <div>
-                        <input readonly asp-for="Appointment.LocationId" value="@ViewBag.LocId" class="form-control" />
-                    </div>
-
-                </div>
-                <div class="form-group row">
-                    <div>
-                        <label asp-for="Appointment.AppointmentDateTime"></label>
-                    </div>
-                    <div>
-                        <input readonly type="datetime" asp-for="Appointment.AppointmentDateTime" value="@ViewBag.timeTime" class="form-control" />
-                    </div>
-
-                </div>
-
-                <input type="submit" class="btn btn-primary" value="AppointmentDetails2" />
+                
+                <input type="submit" class="btn btn-primary" value="Make Appointment" />
 
             </div>
         </form>
     
+        <div>
+            <div class="col-10">
+                <div class="card mb-10">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">
+                            <label style="font-size:23px;color:steelblue;">Appointment Details</label>
+                        </h4>
+                    </div>
 
+
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            Advisor: @ViewBag.AdName
+                            <br />Campus: @ViewBag.CamN
+                            <br />Appointment Date & Time: @ViewBag.timeTime
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 </div>
+
