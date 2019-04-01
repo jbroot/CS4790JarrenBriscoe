@@ -1,0 +1,386 @@
+﻿/*
+    FONTS
+*/
+@font-face {
+    font-family: 'karla-regular';
+    src: url('../fonts/karla/karla-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url('../fonts/montserrat/montserrat-bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat-semibold';
+    src: url('../fonts/montserrat/montserrat-semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url('../fonts/montserrat/montserrat-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'karla-bold';
+    src: url('../fonts/karla/karla-bold.ttf') format('truetype');
+}
+/*
+    Root setup for fonts and font colors
+*/
+:root {
+    /* Fonts Variables */
+    --header_text_font: 'montserrat-semibold';
+    --text_font: 'karla-regular';
+    --sub_header_font: 'karla-regular';
+    --text_subheader_font: 'karla-bold';
+    --small_subheader_font: 'montserrat-regular';
+    --text_color: var(--grey_purple);
+    --header_text_color: var(--dark_purple);
+    --subheader_text_color: var(--less_dark_purple);
+    --small_subheader_color: var(--light_purple);
+    /* Monochromatic Colors */
+    --darkest_mono_purple: #3f1a5b;
+    --less_darker_mono_purpler: #431d5f;
+    --lightest_mono_purple: #532c6f;
+    --second_darker_mono_purple: #4f2296b;
+    --third_darker_mono_purple: #4c2668;
+    --fourth_darker_mono_purple: #492365;
+    --fifth_darker_mono_purple: #462062;
+    /* Linear gradient to complentary #0b8800 (green) */
+    --weber_purple: #492365;
+    --grey_purple: #4c375a;
+    --grey: #4b484f;
+    --grey_green: #485843;
+    --grey_green_green: #406835;
+    --almost_green: #317824;
+    --green: #0b8800;
+    /* Shades to Black */
+    --dark_weber_purple: #3e1f54;
+    --moreDark_weber_purple: #321b43;
+    --darkest_weber_purple: #281634;
+    --black_purple: #1d1224;
+    --blackest_purple: #130a16;
+    --black: #000000;
+    /* Tint to White */
+    --light_weber_purple: #67457d;
+    --lighter_weber_purple: #846796;
+    --lightest_weber_purple: #a28bb0;
+    --white_weber_purple: #c1b1ca;
+    --almost_white: #e0d7e4;
+    --white: #000000;
+    /* Tones going to Grey */
+    --almost_weber_purple: #492960;
+    --greyer_weber_purple: #492f5a;
+    --almost_grey_weber_purple: #483555;
+    --pure_grey_weber_purple: #473a4f;
+    --grey_purple: #463f4a;
+    --pure_grey: #444444;
+    --lilac: #c8a2c8;
+    /* Adjacent Color Scheme */
+    /* Purple */
+    --the_weber_purple: #492365;
+    --dark_purple: #1c032f;
+    --less_dark_purple: #310f4a;
+    --light_purple: #603a7c;
+    --lightest_purple: #816099;
+    /* Blue */
+    --the_blue: #342868;
+    --dark_blue: #0d0630;
+    --less_dark_blue: #1d134c;
+    --light_blue: #4c407f;
+    --lightest_blue: #71679e;
+    /* Pink */
+    --the_pink: #742358;
+    --dark_pink: #360023;
+    --less_dark_pink: #550d3c;
+    --light_pink: #8e3e72;
+    --lightest_pink: #b06b98;
+    /* Traid Color Scheme */
+    /* Yellow */
+    --the_yellow: #97822e;
+    --dark_yellow: #463800;
+    --less_dark_yellow: #6e5c10;
+    --light_yellow: #b8a450;
+    --lightest_yellow: #e4d38a;
+    /* Green */
+    --the_green: #718e2b;
+    --dark_green: #2f4200;
+    --less_dark_green: #4e680f;
+    --light_green: #91ae4c;
+    --lightest_green: #bed782;
+}
+
+
+/*
+    TEXT settings
+*/
+.heading_text {
+    font-family: var(--header_text_font);
+    color: var(--header_text_color);
+}
+
+.subheading_text {
+    font-family: var(--sub_header_font);
+    color: var(--subheader_text_color);
+}
+
+.small_subheading_text {
+    font-family: var(--small_subheader_font);
+    color: var(--small_subheader_color);
+}
+
+.text {
+    font-family: var(--text_font);
+    color: var(--text_color);
+}
+
+.cool_heading_text {
+    font-family: montserrat-regular;
+    color: black;
+}
+
+/*
+    Header grid
+*/
+
+
+@media screen and (min-width: 800px) {
+    .header_grid {
+        display: grid;
+        grid-template-areas: 'header_left header_middle header_right' 'header_bottom header_bottom header_bottom';
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        border: groove;
+        border-width: 1px;
+        border-color: var(--lightest_blue);
+        border-radius: 5px;
+        padding: 10px;
+        background-color: var(--almost_white);
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header_grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        border: solid;
+        background-color: var(--almost_white);
+    }
+
+    .header_middle {
+        grid-area: header_middle;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+.header_left {
+    grid-area: header_left;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.header_middle {
+    grid-area: header_middle;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.header_right {
+    grid-area: header_right;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header_bottom {
+    grid-area: header_bottom;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+}
+
+/*
+    Footer Grid
+*/
+
+@media screen and (min-width: 800px) {
+    .grid_footer {
+        display: grid;
+        grid-template-areas: 'footer_header1 footer_header footer_header' 'footer_left footer_middle footer_right';
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        align-content: space-between;
+        padding: 10px;
+        background-color: whitesmoke;
+        border: solid;
+        border-width: 1px;
+        border-color: var(--light_blue);
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .grid_footer {
+        display: flex;
+        flex-wrap: wrap;
+        grid-template-areas: 'footer_header1 footer_header footer_header' 'footer_left footer_middle footer_right';
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        align-content: space-between;
+        background-color: var(--lightest_green);
+        padding: 20px;
+        margin-top: 30px;
+        border: solid;
+        border-width: 1px;
+        border-color: var(--less_dark_green);
+    }
+}
+
+
+
+.footer_header1 {
+    grid-area: footer_header1;
+    display: flex;
+    margin-left: 10px;
+}
+
+.footer_left {
+    grid-area: footer_left;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_middle {
+    grid-area: footer_middle;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_right {
+    grid-area: footer_right;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright {
+    margin: 10px;
+}
+
+/*
+    Buttons
+
+    .my_button{
+    background-color: var(--weber_purple);
+    font-family: montserrat-regular;
+}
+*/
+
+.my_button.btn {
+    background-color: var(--lightest_mono_purple);
+    font-family: montserrat-regular;
+    border: none;
+    border: solid 2px;
+    border-color: var(--almost_weber_purple);
+}
+
+    .my_button.btn:hover {
+        background-color: var(--darkest_mono_purple);
+        border: solid 2px;
+        border-color: var(--lightest_mono_purple);
+    }
+
+
+/*
+    Cards
+*/
+.card_box {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    /*
+            background-color: var(--lilac);
+
+    */
+    margin: 20px;
+}
+
+.card {
+    margin: 20px;
+    width: 300px;
+    height: auto;
+}
+
+.my_card.card {
+    border-color: var(--less_dark_green);
+    
+}
+
+.my_card_header.card-header {
+    font-family: montserrat-semibold;
+    background-color: var(--lightest_green);
+    color: var(--dark_blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-color: var(--the_blue);
+    border-bottom:solid;
+    border-width: .5px;
+}
+
+.my_card_body.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--lightest_green);
+}
+
+.my_card_body_text{
+    font-family: karla-regular;
+}
+
+
+
+.my_card_footer.card-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--lightest_green);
+    border: none;
+    margin: 0px;
+}
+
+.card_image {
+    height: auto;
+    width: 100px;
+}
+
+li{
+    list-style: none;
+}

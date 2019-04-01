@@ -34,7 +34,7 @@ namespace EastAdvising.Models
 
         [Required]
         [Display(Name = "Phone Number")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         public int PreferredLocation { get; set; } //LocationId
         

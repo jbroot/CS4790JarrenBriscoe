@@ -1,0 +1,24 @@
+﻿@model List<EastAdvising.Models.Advisor>
+<div class="container card_box border rounded">
+    @foreach (var ad in Model)
+    {
+        <div class="card my_card">
+            <div class="card-header my_card_header">
+                <label>@ad.FirstName @ad.LastName</label>
+            </div>
+            <div class="card-body my_card_body">
+                <img src="~/images/weber-state-university-squarelogo_emblem_green.png" class="img-fluid card_image" />
+            </div>
+
+            <div class="card-footer my_card_footer">
+                <a asp-action="AvailabilityDetails" asp-controller="Home" 
+                class="btn btn-primary my_button" asp-route-id="@ad.AdvisorId">View Appointments</a>
+            </div>
+        </div>
+    }
+</div>
+<div class="btn-group">
+    <a asp-action="CollegeDetails" class="btn btn-primary my_button">Back to Departments</a>
+
+</div>
+

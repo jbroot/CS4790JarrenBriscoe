@@ -1,0 +1,89 @@
+﻿@model EastAdvising.Models.ViewModels.AppointmentViewModels
+@using EastAdvising.Extensions
+
+
+
+<div class="container card_box border rounded">
+
+
+
+
+
+
+    <form method="post" asp-action="AppointmentDetails2" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+            <ul class="form_style">
+                <li>
+                    <label asp-for="Student.FullName"><i class="fas fa-signature"></i> Full Name<span class="required">*</span></label>
+                    <input type="text" asp-for="Student.FirstName" placeholder="first" class="field_half" />
+                    <input type="text" asp-for="Student.LastName" placeholder="last" class="field_half" />
+                </li>
+
+
+                <li>
+                    <label asp-for="Student.EmailAddress"><i class="far fa-envelope"></i> Email<span class="required">*</span></label>
+                    <input type="text" asp-for="Student.EmailAddress" class="field_long" />
+                </li>
+
+                <li>
+                    <label asp-for="Student.PhoneNumber"><i class="fas fa-mobile-alt"></i> Phone</label>
+                    <input type="text" asp-for="Student.PhoneNumber" class="field_long" />
+                </li>
+
+                <li>
+                    <label asp-for="Student.WNumber">W#</label>
+                    <input type="text" asp-for="Student.WNumber" class="field_long" />
+                </li>
+
+                <li>
+                    <label asp-for="Appointment.Comments"><i class="far fa-comments"></i> Comments</label>
+                    <textarea asp-for="Appointment.Comments" class="field_long field_textarea focus_comments"></textarea>
+
+                </li>
+
+
+                <li>
+                    <p>(required fields)<span class="required">*</span></p>
+                </li>
+
+                <li>
+                    <input type="submit" class="btn-primary my_button button field_half form_button" value="Make Appointment" />
+
+                </li>
+            </ul>
+
+        <input hidden asp-for="Appointment.Status" value="A" />
+        <input hidden asp-for="Appointment.AdvisorId" value="@ViewBag.adId" />
+        <input hidden asp-for="Appointment.LocationId" value="@ViewBag.LocId" />
+        <input hidden type="datetime" asp-for="Appointment.AppointmentDateTime" value="@ViewBag.timeTime" />
+        <input hidden value="@ViewBag.AvId" name="AvailId" />
+        <input hidden value="@ViewBag.AdName" name="AdvName" />
+
+    </form>
+
+
+        <div class="my_card card">
+            <div class="card-header my_card_header">
+
+                <label>Appointment Details</label>
+            </div>
+
+
+            <div class="card-body my_card_body">
+                <img src="~/images/weber-state-university-squarelogo_emblem_green.png" class="img-fluid card_image" />
+
+            </div>
+            <div class="card-footer my_card_footer">
+                <ul>
+                    <li><label>Advisor:</label> <label> @ViewBag.AdName</label> </li>
+                    <li><label>Campus: </label><label>@ViewBag.CamN</label></li>
+                    <li><label>Appointment Date & Time</label><label>@ViewBag.timeTime</label></li>
+                </ul>
+            </div>
+        </div>
+    
+</div>
+ 
+
+

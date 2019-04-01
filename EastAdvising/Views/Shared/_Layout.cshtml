@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var today = DateTime.Now.ToString("dddd, MMM dd yyyy");
+    var time = DateTime.Now.ToString("hh:mm tt");
+    TimeZoneInfo zone = TimeZoneInfo.Local;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,35 +12,40 @@
     <meta name="google-signin-client_id" content="228103239088-g8bsv3m6fkadkv2co0cqtoqsds81869h.apps.googleusercontent.com">
     <title>@ViewData["Title"] - EastAdvising</title>
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/_LayoutStylesSheet.css" rel="stylesheet" />
+        <link href="~/css/SetUpAppointment.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <!--Maybe delete when published
+                    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    -->
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+        <link href="~/css/_LayoutStylesSheet.css" rel="stylesheet" />
+        <link href="~/css/SetUpAppointment.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">EastAdvising</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
+    <!--HEADER-->
+    <div class="header_grid">
+        <div class="header_left">
+            <img src="~/images/weber_header_logo_with_color.png" />
+        </div>
+
+        <div class="header_middle">
+            <div>
+                <h1 class="heading_text">ADVISING</h1>
             </div>
         </div>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -49,15 +60,130 @@
         </script>
     </nav>
 
+        <div class="header_right">
+            <br /><br /><br /><br />
+            <div>
+                <h4 class="text"><i class="far fa-clock"></i> @time</h4>
+            </div>
+            <div class="text">
+                <h5 class="text"><i class="far fa-calendar-alt"></i> @today</h5>
+            </div>
+        </div>
+
+        <div class="header_bottom">
+
+        </div>
+    </div>
+
+
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - EastAdvising</p>
-        </footer>
-    </div>
+
+    
+        <div class="container body-content">
+            @RenderBody()
+
+
+        </div>
+    
+    <footer class="grid_footer">
+        <div class="footer_header1">
+            <h3 class="heading_text">About Us</h3>
+
+        </div>
+
+        <div class="footer_left">
+            <table class="text">
+                <tr>
+                    <th class="small_subheading_text">Working hours</th>
+                </tr>
+
+                <tr>
+                    <td>Monday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>8:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="footer_middle">
+
+            <div>
+                <table class="text">
+                    <tr>
+                        <th class="small_subheading_text"><i class="fas fa-map-marker-alt"></i> Office Location</th>
+                    </tr>
+                    <tr>
+                        <td>1465 Edvalson Street</td>
+                    </tr>
+                    <tr>
+                        <td>Ogden, Utah</td>
+
+                    </tr>
+                    <tr>
+                        <td>Technical Education Building</td>
+
+                    </tr>
+                    <tr>
+                        <td>Room 110</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        <div class="footer_right">
+            <div>
+                <table class="text">
+                    <tr>
+                        <th class="small_subheading_text">Advisor</th>
+                    </tr>
+
+                    <tr>
+                        <td><i class="fas fa-signature"></i> </td>
+                        <td>Ranee Dearden</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-mobile-alt"></i></td>
+                        <td>801-626-7929</td>
+                    </tr>
+                    <tr>
+                        <td><i class="far fa-envelope"></i></td>
+                        <td>raneedearden@weber.edu</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </footer>
+    <hr />
+
+    <p class="text copyright">
+        &copy; 2019 - Weber State University
+    </p>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <environment include="Development">

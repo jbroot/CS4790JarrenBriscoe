@@ -33,13 +33,22 @@
   </ItemGroup>
 
   <ItemGroup>
-
+    <Folder Include="Controllers\" />
     <Folder Include="Data\Migrations\" />
 
     <Content Update="credentials.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
 
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Student\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Student\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>

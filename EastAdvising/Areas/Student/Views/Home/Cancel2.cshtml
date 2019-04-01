@@ -1,0 +1,65 @@
+﻿@model List<EastAdvising.Models.Appointment>
+
+<div class="row">
+
+    @foreach (var ad in Model)
+    {
+        <form method="post" asp-action="Cancel3">
+            <div class="p-4 border rounded">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="@ad.Student.FirstName"></label>
+                    </div>
+                    <div>
+                        <input readonly asp-for="@ad.Student.FirstName" name="FN" class="form-control" />
+                        <input hidden asp-for="@ad.Student.StudentId" name="idS" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-2">
+                        <label asp-for="@ad.Student.LastName"></label>
+                    </div>
+                    <div class="col-5">
+                        <input readonly asp-for="@ad.Student.LastName" name="LN" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="@ad.AppointmentDateTime"></label>
+                    </div>
+                    <div>
+                        <input readonly asp-for="@ad.AppointmentDateTime" name="time1" class="form-control" />
+                        <input hidden asp-for="@ad.AppointmentId" name="idA" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="@ad.Advisor.FullName"></label>
+                    </div>
+                    <div>
+                        <input readonly asp-for="@ad.Advisor.FullName" name="AFN" class="form-control" />
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div>
+                        <label asp-for="@ad.Student.EmailAddress"></label>
+                    </div>
+                    <div>
+                        <input readonly asp-for="@ad.Student.EmailAddress" name="EA" class="form-control" />
+                    </div>
+
+                </div>
+
+
+                <input type="submit" class="btn btn-primary" value="Cancel Appointment" />
+
+            </div>
+        </form>
+    }
+
+</div>
