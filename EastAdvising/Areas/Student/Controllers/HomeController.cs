@@ -177,7 +177,6 @@ namespace EastAdvising.Controllers
             _db.Availability.Remove(Av);
             await _db.SaveChangesAsync();
             return View();
-
         }
 
         public IActionResult About()
