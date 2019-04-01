@@ -1,0 +1,84 @@
+﻿@model IEnumerable<EastAdvising.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Scheduled Appointments";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>*@
+            <th>
+                @String.Format("Campus")
+            </th>
+            <th>
+                @String.Format("Location")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Advisor)
+        </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service.ServiceType)
+            </td>
+            <td>
+                @String.Format("{0}", item.Location.Campus)
+            </td>
+            <td>
+                @String.Format("{0} {1}", item.Location.Building, item.Location.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+
+
+            @*<td>
+            @Html.DisplayFor(modelItem => item.Advisor.EmailAddress)
+        </td>*@
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AppointmentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AppointmentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AppointmentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
