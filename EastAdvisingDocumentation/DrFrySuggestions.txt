@@ -2,7 +2,7 @@ dynamic footer--not on homepage
 
 view all appointments before advisor
 
-show everything on calendar screen
+show everything on grid layout screen
 
 grid layout to select. not calendar
 
@@ -11,3 +11,6 @@ footer show office locations in grid layout
 reason drop down
 
 turn cancel button red
+
+osiris server: ftp to osiris; runs bash
+
