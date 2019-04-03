@@ -1,0 +1,49 @@
+Let autoEmail.sh run every X hours
+Connect to titan.cs.weber.edu:10433 database EAST_Advising with user 4790
+
+reminder=Select email, startTime, location, adviser from tables x,y,z where startTime is within 48 hours of current time
+//cancelled script would have this instead:
+reminder=Select email, startTime, location, adviser from tables x,y,z where cancelled is true
+
+for email in reminder:
+  $(mail -s "subject" "message" to email)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fromEmail = new MailAddress()
+SendVerificationLinkEmail(user.emailId,
+
+message = 
+Status=true
+
+smtp = new smtpClient{
+host=
+port=
+DeliveryMethod = 
+UseDefaultCredentials
